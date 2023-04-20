@@ -12,6 +12,11 @@ public class DriverManager {
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--remote-allow-origins=*");
+        chromeOptions.addArguments("--disable-dev-shm-usage");
+        chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("--disable-gpu");
+        chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments("--ignore-ssl-errors=yes");
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
     }
