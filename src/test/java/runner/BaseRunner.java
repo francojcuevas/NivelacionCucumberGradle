@@ -8,6 +8,9 @@ import steps.Hooks;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(glue = "steps",
+        plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+                , "json:results/cucumber.json"
+                , "junit:results/cucumber.xml"},
         features = "src/test/resources/features")
 public class BaseRunner extends Hooks {
 
